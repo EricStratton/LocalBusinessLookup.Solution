@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Restaurant Page";
+}
+
+<h1>All restaurants:</h1>
+
+<ol>
+@foreach (Restaurant restaurant in Model)
+{
+    <ul>
+        <li>ID: @restaurant.RestaurantId</li>
+        <li>Name: @restaurant.Name</li>
+        <li>Street Address: @restaurant.StreetAddress</li>
+        <li>Business: @restaurant.KeyBusiness</li>
+    </ul>
+    <a href="/Restaurants/Details/@(restaurant.RestaurantId)"><p>View Details</p></a>
+    <br>
+}
+</ol>
+
+<h3>Add new restaurant:</h3>
+<form action="/Restaurants" method="Post">
+    <label for="Name">Name:</label>
+    <input id="Name" name="Name" type="text">
+    <label for="StreetAddress">Street Address:</label>
+    <input id="StreetAddress" name="StreetAddress" type="text">
+    <label for="KeyBusiness">Business:</label>
+    <input id="KeyBusiness" name="KeyBusiness" type="text">
+    <button type="submit">Add</button>
+</form>

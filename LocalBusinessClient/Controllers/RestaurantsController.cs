@@ -16,6 +16,12 @@ namespace LocalBusinessClient.Controllers
           return View(allRestaurants);
         }
 
+        //Attempt to get randomized GET request
+        public IActionResult Random()
+        {
+          var 
+        }
+
         [HttpPost] // Create new restaurant
         public IActionResult Index(Restaurant restaurant)
         {

@@ -17,9 +17,11 @@ namespace LocalBusinessClient.Controllers
         }
 
         //Attempt to get randomized GET request
-        public IActionResult Random()
+        public IActionResult Random(int id)
         {
-          var 
+          var randomRestaurant = Restaurant.GetRandom();
+          randomRestaurant.RestaurantId = id;
+          return RedirectToAction("Details", id);
         }
 
         [HttpPost] // Create new restaurant

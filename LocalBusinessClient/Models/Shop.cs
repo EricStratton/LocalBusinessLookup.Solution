@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -48,6 +50,18 @@ namespace LocalBusinessClient.Models
     public static void Delete(int id)
     {
       var apiCallTask = ShopApiHelper.Delete(id);
+    }
+
+    // Randomizes return id from list of all shops
+    public static Shop GetRandom()
+    {
+      var apiCallTask = ShopApiHelper.GetAll();
+      var result = apiCallTask.Result;
+
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      List<Shop> restaurantList = JsonConvert.DeserializeObject<List<Shop>>(jsonResponse.ToString());
+
+      return restaurantList.ElementAt(new Random().Next(0, restaurantList.Count() - 1));
     }
   }
 }

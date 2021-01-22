@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Shop Page";
+}
+
+<h1>All shops:</h1>
+
+<ol>
+@foreach (Shop shop in Model)
+{
+    <ul>
+        <li>ID: @shop.ShopId</li>
+        <li>Name: @shop.Name</li>
+        <li>Street Address: @shop.StreetAddress</li>
+        <li>Business: @shop.KeyBusiness</li>
+    </ul>
+    <a href="/Shops/Details/@(shop.ShopId)"><p>View Details</p></a>
+    <br>
+}
+</ol>
+
+<h3>Add new shop:</h3>
+<form action="/Shops" method="Post">
+    <label for="Name">Name:</label>
+    <input id="Name" name="Name" type="text">
+    <label for="StreetAddress">Street Address:</label>
+    <input id="StreetAddress" name="StreetAddress" type="text">
+    <label for="KeyBusiness">Business:</label>
+    <input id="KeyBusiness" name="KeyBusiness" type="text">
+</form>

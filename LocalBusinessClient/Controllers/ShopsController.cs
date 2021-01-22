@@ -42,5 +42,12 @@ namespace LocalBusinessClient.Controllers
           Shop.Put(shop);
           return RedirectToAction("Details", id);
         }
+
+        public IActionResult Random() // Chooses randomly from list of shops and redirects to its details page
+        {
+          var randomShop = Shop.GetRandom();
+          var randomDetails = Shop.GetDetails(randomShop.ShopId);
+          return View("Details", randomDetails);
+        }
     }
 }

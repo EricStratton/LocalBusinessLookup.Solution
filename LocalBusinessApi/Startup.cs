@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models; // For Swashbuckle
 
 namespace LocalBusinessApi
 {
@@ -23,6 +24,11 @@ namespace LocalBusinessApi
             services.AddDbContext<LocalBusinessApiContext>(opt => 
                 opt.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddSwaggerGen(c => 
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title= "Local Business API", Version = "v1"});
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +46,11 @@ namespace LocalBusinessApi
 
             // app.UseHttpsRedirection(); // WOULD NEED FOR PRODUCTION APPLICATION
             app.UseMvc();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Local Business API V1");
+            });
         }
     }
 }

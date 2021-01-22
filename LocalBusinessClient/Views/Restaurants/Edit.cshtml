@@ -1,0 +1,12 @@
+<h1>Edit Info:</h1>
+<form action="/Restaurants/Details/@(Model.RestaurantId)" method="post">
+  <label for="Name">Name:</label>
+  <input id="Name" name="Name" type="text" value="@(Model.Name)">
+  <label for="StreetAddress">Street Address:</label>
+  <input id="StreetAddress" name="StreetAddress" type="text" value="@(Model.StreetAddress)">
+  <label for="KeyBusiness">Business:</label>
+  <input id="KeyBusiness" name="KeyBusiness" type="text" value="@(Model.KeyBusiness)">
+  <button type="submit">Update</button>
+</form>
+
+<a href="/Restaurants/Details/@(Model.RestaurantId)"><p>Return to Details</p></a>

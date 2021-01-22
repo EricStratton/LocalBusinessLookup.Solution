@@ -21,15 +21,9 @@ namespace LocalBusinessApi.Controllers
 
         // GET api/restaurants
         [HttpGet]
-        public ActionResult<IEnumerable<Restaurant>> Get(string keybusiness)
+        public ActionResult<IEnumerable<Restaurant>> Get()
         {
-          var query = _db.Restaurants.AsQueryable();
-
-          if (keybusiness != null)
-          {
-            query = query.Where(entry => entry.KeyBusiness = keybusiness);
-          }
-            return query.ToList();
+            return _db.Restaurants.ToList();
         }
 
         // GET api/restaurants/5

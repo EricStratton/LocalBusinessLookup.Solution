@@ -24,18 +24,6 @@ namespace LocalBusinessClient.Models
       return restaurantList;
     }
 
-    // Attempt to make randomized GET request //
-    public static Restaurant GetRandom()
-    {
-      var apiCallTask = RestaurantApiHelper.GetAll();
-      var result = apiCallTask.Result;
-
-      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
-      List<Restaurant> restaurantList = JsonConvert.DeserializeObject<List<Restaurant>>(jsonResponse.ToString());
-
-      return restaurantList.ElementAt(new Random().Next(0, restaurantList.Count() - 1));
-    }
-
     public static Restaurant GetDetails(int id)
     {
       var apiCallTask = RestaurantApiHelper.Get(id);
@@ -62,6 +50,18 @@ namespace LocalBusinessClient.Models
     public static void Delete(int id)
     {
       var apiCallTask = RestaurantApiHelper.Delete(id);
+    }
+
+    // Randomizes return id from list of all restaurants
+    public static Restaurant GetRandom()
+    {
+      var apiCallTask = RestaurantApiHelper.GetAll();
+      var result = apiCallTask.Result;
+
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      List<Restaurant> restaurantList = JsonConvert.DeserializeObject<List<Restaurant>>(jsonResponse.ToString());
+
+      return restaurantList.ElementAt(new Random().Next(0, restaurantList.Count() - 1));
     }
   }
 }

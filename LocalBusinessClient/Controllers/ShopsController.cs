@@ -35,6 +35,7 @@ namespace LocalBusinessClient.Controllers
           return View(shop);
         }
 
+        [HttpPost]
         public IActionResult Details(int id, Shop shop)
         {
           shop.ShopId = id;

@@ -3,7 +3,7 @@ using RestSharp;
 
 namespace TravelClient.Models
 {
-  class ApiHelper
+  class RestaurantApiHelper
   {
     public static async Task<string> GetAll()
     {

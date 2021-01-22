@@ -41,7 +41,7 @@ namespace LocalBusinessApi
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection(); // WOULD NEED FOR PRODUCTION APPLICATION
             app.UseMvc();
         }
     }

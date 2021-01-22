@@ -1,3 +1,7 @@
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
 namespace LocalBusinessClient.Models
 {
   public class Shop
@@ -9,7 +13,7 @@ namespace LocalBusinessClient.Models
 
     public static List<Shop> GetShops()
     {
-      var apiCallTask = ApiHelper.GetAll();
+      var apiCallTask = ShopApiHelper.GetAll();
       var result = apiCallTask.Result;
 
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
@@ -20,7 +24,7 @@ namespace LocalBusinessClient.Models
 
     public static Shop GetDetails(int id)
     {
-      var apiCallTask = ApiHelper.Get(id);
+      var apiCallTask = ShopApiHelper.Get(id);
       var result = apiCallTask.Result;
 
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
@@ -32,18 +36,18 @@ namespace LocalBusinessClient.Models
     public static void Post(Shop shop)
     {
       string jsonShop = JsonConvert.SerializeObject(shop);
-      var apiCallTask = ApiHelper.Post(jsonShop);
+      var apiCallTask = ShopApiHelper.Post(jsonShop);
     }
 
     public static void Put(Shop shop)
     {
       string jsonShop = JsonConvert.SerializeObject(shop);
-      var apiCallTask = ApiHelper.Put(shop.ShopId, jsonShop);
+      var apiCallTask = ShopApiHelper.Put(shop.ShopId, jsonShop);
     }
 
     public static void Delete(int id)
     {
-      var apiCallTask = ApiHelper.Delete(id);
+      var apiCallTask = ShopApiHelper.Delete(id);
     }
   }
 }

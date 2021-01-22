@@ -1,3 +1,7 @@
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
 namespace LocalBusinessClient.Models
 {
   public class Restaurant
@@ -9,7 +13,7 @@ namespace LocalBusinessClient.Models
 
     public static List<Restaurant> GetRestaurants()
     {
-      var apiCallTask = ApiHelper.GetAll();
+      var apiCallTask = RestaurantApiHelper.GetAll();
       var result = apiCallTask.Result;
 
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
@@ -20,7 +24,7 @@ namespace LocalBusinessClient.Models
 
     public static Restaurant GetDetails(int id)
     {
-      var apiCallTask = ApiHelper.Get(id);
+      var apiCallTask = RestaurantApiHelper.Get(id);
       var result = apiCallTask.Result;
 
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
@@ -32,18 +36,18 @@ namespace LocalBusinessClient.Models
     public static void Post(Restaurant restaurant)
     {
       string jsonRestaurant = JsonConvert.SerializeObject(restaurant);
-      var apiCallTask = ApiHelper.Post(jsonRestaurant);
+      var apiCallTask = RestaurantApiHelper.Post(jsonRestaurant);
     }
 
     public static void Put(Restaurant restaurant)
     {
       string jsonRestaurant = JsonConvert.SerializeObject(restaurant);
-      var apiCallTask = ApiHelper.Put(restaurant.RestaurantId, jsonRestaurant);
+      var apiCallTask = RestaurantApiHelper.Put(restaurant.RestaurantId, jsonRestaurant);
     }
 
     public static void Delete(int id)
     {
-      var apiCallTask = ApiHelper.Delete(id);
+      var apiCallTask = RestaurantApiHelper.Delete(id);
     }
   }
 }

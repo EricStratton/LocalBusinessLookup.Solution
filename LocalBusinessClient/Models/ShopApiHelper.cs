@@ -1,4 +1,4 @@
-using System.Threading.Task;
+using System.Threading.Tasks;
 using RestSharp;
 
 namespace LocalBusinessClient.Models

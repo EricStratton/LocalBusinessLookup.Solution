@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using RestSharp;
 
-namespace TravelClient.Models
+namespace LocalBusinessClient.Models
 {
   class RestaurantApiHelper
   {

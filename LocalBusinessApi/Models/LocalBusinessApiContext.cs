@@ -4,7 +4,7 @@ namespace LocalBusinessApi.Models
 {
   public class LocalBusinessApiContext : DbContext
   {
-    public LocalApiContext(DbContextOptions<LocalBusinessApiContext> options)
+    public LocalBusinessApiContext(DbContextOptions<LocalBusinessApiContext> options)
         : base(options)
     {
     }

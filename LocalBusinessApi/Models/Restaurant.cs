@@ -1,8 +1,8 @@
 namespace LocalBusinessApi.Models
 {
-  public class Resturant
+  public class Restaurant
   {
-    public int ResturantId { get; set; }
+    public int RestaurantId { get; set; }
     public string Name { get; set; }
     public string StreetAddress { get; set; }
     public string KeyBusiness { get; set; }

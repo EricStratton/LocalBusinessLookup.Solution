@@ -1,4 +1,4 @@
-namespace LocalApi.Models
+namespace LocalBusinessApi.Models
 {
   public class Resturant
   {

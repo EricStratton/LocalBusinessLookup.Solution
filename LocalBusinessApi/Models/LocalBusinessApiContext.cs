@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace LocalApi.Models
+namespace LocalBusinessApi.Models
 {
-  public class LocalApiContext : DbContext
+  public class LocalBusinessApiContext : DbContext
   {
-    public LocalApiContext(DbContextOptions<LocalApiContext> options)
+    public LocalApiContext(DbContextOptions<LocalBusinessApiContext> options)
         : base(options)
     {
     }

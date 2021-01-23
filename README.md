@@ -66,6 +66,11 @@ Use this webpage to manage both local shops and local restaurants. Properties in
 
 **_If you want to access the Client user interface you will need to keep both the Client and API programs running simultaneously. Alternatively, you can view and access the API endpoints through Swagger._**
 
+### Client:
+- All CRUD operations are available through the Client-side program
+- Navigation within the program follows the RESTful protocal
+- `View Random` at the top of both the Shops and Restaurants index page will display the details of a shop or restaurant at random from the list of current entries
+
 ### Swagger:
 
 - Swagger provides custom documentation on an API's endpoints
@@ -78,6 +83,7 @@ Use this webpage to manage both local shops and local restaurants. Properties in
 
 ### Import Database using Entity Framework Core
 
+- This program contains seeded data
 - Navigate to `LocalBusinessApi` directory in your terminal
 - Run command `dotnet ef database update` to generate database based on provided structure
 - If you make changes and want to update database run command `dotnet ef migrations add Initial`

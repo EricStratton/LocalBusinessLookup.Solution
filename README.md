@@ -1,6 +1,6 @@
 ## Local Business API & Client -- Repository containing both a .NET Web API and corresponding .NET MVC serving as the Client
 
-### _Webpage to manage local businesses. At this time program is designed to operate for local shops and local restaurants. API is accessible through Client-side program or alternatively through SwaggerUI_
+### _Webpage to manage local businesses including local shops and local restaurants. API is accessible through Client-side program or alternatively through the SwaggerUI_
 
 ### _Created by: Eric Stratton_
 
@@ -66,6 +66,16 @@ Use this webpage to manage both local shops and local restaurants. Properties in
 
 **_If you want to access the Client user interface you will need to keep both the Client and API programs running simultaneously. Alternatively, you can view and access the API endpoints through Swagger._**
 
+### Swagger:
+
+- Swagger provides custom documentation on an API's endpoints
+- To view documentation on this API, follow the steps above under the heading `Terminal:` until the end of **_API Program_** section
+- This will insure that your are running the API program
+- In your preferred internet browser, enter the url: http://localhost:5000/swagger/v1/swagger.json to view raw documentation
+- Enter http://localhost:5000/swagger/index.html to access the Swagger UI where you will be able to take advantage of full CRUD operations without running the Client-side program
+
+**_Swagger is supported using the Swashbuckle package reference_**
+
 ### Import Database using Entity Framework Core
 
 - Navigate to `LocalBusinessApi` directory in your terminal
@@ -74,19 +84,20 @@ Use this webpage to manage both local shops and local restaurants. Properties in
 
 ### Navigating in Application:
 
-- App opens on landing page at `localhost:5004/` if Client program is running
+- App opens on landing page at `localhost:5004/` if Client-side program is running
+- See Swagger section above if you wish to access API endpoints without running Client-side program
 - Click on one of the hyperlinks to navigate to a different section of app
 
 ### RESTful Protocol:
 
 - **_Page routes are named using RESTful notation as reflected in the pathway urls_**
 - `localhost:5004/`: landing page
-- `localhost:5004/vendors`: homepage for vendor profiles, displays all existing vendor profiles
-- `localhost:5004/vendoes/new`: page for creating a new vendor profile
-- `localhost:5004/vendors/{vendorId}`: page for select vendor profile, displays vendor description and existing orders for vendor
-- `localhost:5004/vendors/{vendorId}/orders/new`: page for select vendor to place new order
-- `localhost:5004/vendors/{vendorId}/orders/{orderId}`: page for specific order details
-
+- `localhost:5004/Shops`: homepage for shop profiles, displays all existing shop profiles
+- `localhost:5004/Shops/Details/{ShopId}`: page for displaying a specific shop profile
+- `localhost:5004/Shops/Edit/{ShopId}`: page for editing select shop profile
+- `localhost:5004/Restaurants`: homepage for restaurant profiles, displays all existing restaurant profiles
+- `localhost:5004/Restaurants/Details/{RestaurantId}`: page for displaying a specific restaurant profile
+- `localhost:5004/Restaurants/Edit/{RestaurantId}`: page for editing select restaurant profile
 
 ## Known Bugs/Issues
 
@@ -104,9 +115,12 @@ Do not hesitate to contact me at:
 - _C#_
 - _.NET Core 2.2_
 - _Entity_
-- _Identity_
 - _MySQL_
 - _MySQL Workbench_
+- _RestSharp_
+- _Newtonsoft.Json_
+- _Swagger_
+- _Swashbuckle_
 - _Git_
 - _GitHub_
 

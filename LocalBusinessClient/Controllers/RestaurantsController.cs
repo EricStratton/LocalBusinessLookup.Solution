@@ -43,6 +43,13 @@ namespace LocalBusinessClient.Controllers
           return RedirectToAction("Details", id);
         }
 
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+          Restaurant.Delete(id);
+          return RedirectToAction("Index");
+        }
+
         public IActionResult Random() // Chooses randomly from list of restaurants and redirects to its details page
         {
           var randomRestaurant = Restaurant.GetRandom();

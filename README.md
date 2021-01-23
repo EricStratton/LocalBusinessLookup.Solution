@@ -107,7 +107,7 @@ Use this webpage to manage both local shops and local restaurants. Properties in
 
 ## Known Bugs/Issues
 
-There are no known bugs at this time.
+Client-side delete paths not working at this time.
 
 ## Support & Contact Details
 

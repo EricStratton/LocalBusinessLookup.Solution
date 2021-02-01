@@ -71,6 +71,19 @@ Use this webpage to manage both local shops and local restaurants. Properties in
 - Navigation within the program follows the RESTful protocal
 - `View Random` at the top of both the Shops and Restaurants index page will display the details of a shop or restaurant at random from the list of current entries
 
+### API Documentaion:
+To query database and view it's content in Postman:
+- GET request `http://localhost:5000/retaurants` to view all restaurants stored in the database
+- GET request `http://localhost:5000/shops` to view all shops stored in the database
+- GET request `http://localhost:5000/restaurants/1` to view the restaurant with an ID of 1
+- GET request `http://localhost:5000/shops/1` to view the shop with an ID of 1
+- POST request `http://localhost:5000/retaurants` with a body containing values for `name`, `streetAddress`, and `keyBusiness` to add a new restaurant to the database
+- Follow protocal above with a POST request to `http://localhost:5000/shops` to add a new shop to database
+- PUT request `http://localhost:5000/restaurants/1` containing a body containing updated values for `name`, `streetAddress`, or `keyBusiness` to update the restaurant with an ID of 1
+- Follow protocal above with PUT request to `http://localhost:5000/shops/1` to update shop with ID of 1
+- DELETE request `http://localhost:5000/restaurant/1` to delete restaurant with ID of 1
+- DELETE request `http://localhost:5000/shops/1` to delete shop with ID of 1  
+
 ### Swagger:
 
 - Swagger provides custom documentation on an API's endpoints

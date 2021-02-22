@@ -6,7 +6,7 @@
 
 ## Description
 
-Use this webpage to manage both local shops and local restaurants. Properties include: business name, street address, and their primary business operation.
+This repository hosts an API built using C#/.NET and a Client Side project to interface with the API. Use this webpage to manage both local shops and local restaurants. Properties include: business name, street address, and their primary business operation.
 
 **_Authentication:_** 
 
